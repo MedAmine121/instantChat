@@ -1,0 +1,31 @@
+<html>
+<body>
+<a href="/create">Create room</a>
+<a href="void:javascript(0)" id="update">Refresh</a><a href="/logout">  Logout</a>
+<table id="table">
+<tr><th>Room name</th><th>Connected users</th><th>Connect</th></tr>
+</table></body></html>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+
+function update(){
+	$.ajax({url: "/Browse", success: function(result){
+	$("table").html("<tr><th>Room name</th><th>Connected users</th><th>Connect</th></tr>")
+    for(key in result){
+    $("table").append(`<tr><td>${key}</td><td>${result[key]}</td><td><a href="/chat/${key}">Join</a></td></tr>`)}
+    }
+    })
+}
+$("#update").click(()=>{update();})
+    update();
+    
+  });
+
+
+
+</script>
