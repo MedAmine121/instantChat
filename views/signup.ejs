@@ -2,7 +2,7 @@
 <head><style>
 
 
-	body {
+  body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -95,8 +95,11 @@
 
 <body>
   <div class="login">
+    
     <form class="box" method="POST" action="/signup">
+      
       <img src="https://malcoded.com/static/713b40a34ef44b9c6180fa626bf45937/6ff5e/nodejs-cli-banner.png" alt="">
+      <span style="text-align: center;color:red;"><%=msg%></span>
       <div class="input-box">
         <label for="iEmail">Username</label>
         <input id="iEmail" type="text" name="username" placeholder="enter your username" />
@@ -107,8 +110,8 @@
       </div>
       <button class="button" type="submit">Sign up</button>
       <br>
-      Or 
-      <br><br><a class="button" href="/">Login</a>
+      <span style="text-align: center;color:white;">Or</span>
+      <br><a class="button" href="/">Login</a>
     </form>
 
   </div>
